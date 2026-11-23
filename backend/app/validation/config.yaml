@@ -1,0 +1,77 @@
+dataset:
+  name: "KW51 Railway Bridge"
+  source: "KU Leuven (DOI: 10.5281/zenodo.3745914)"
+  zip_2018: "data/kw51/ambient_201810.zip"
+  dir_2019: "data/kw51/ambient_201906"
+  trackedmodes_file: "data/kw51/trackedmodes.mat"
+
+channels:
+  primary:
+    - "aBD11Az"
+    - "aBD17Ay"
+    - "aBD17Az"
+    - "aBD23Az"
+    - "tVL"
+  no_temp:
+    - "aBD11Az"
+    - "aBD17Ay"
+    - "aBD17Az"
+    - "aBD23Az"
+  descriptions:
+    aBD11Az: "Left quarter-span deck (Track A, vertical)"
+    aBD17Ay: "Midspan deck (Track A, transverse)"
+    aBD17Az: "Midspan deck (Track A, vertical bending)"
+    aBD23Az: "Right quarter-span deck (Track A, vertical)"
+    tVL: "Ambient temperature at bridge site (°C)"
+
+splits:
+  healthy_train:
+    start_date: "2018-10-16"
+    end_date: "2018-10-22"
+  healthy_val:
+    start_date: "2018-10-24"
+    end_date: "2018-10-27"
+  healthy_test:
+    start_date: "2018-10-28"
+    end_date: "2018-10-31"
+  damaged_test:
+    start_date: "2019-06-01"
+    end_date: "2019-06-02"
+
+resampling:
+  raw_fs: 825.8064516129032
+  target_fs: 50.0
+  lowpass_cutoff_hz: 20.0
+  filter_order: 8
+  polyphase_up: 31
+  polyphase_down: 512
+
+windowing:
+  window_size: 50
+  stride_train: 50
+  stride_val: 50
+  stride_test: 50
+
+training:
+  batch_size: 128
+  epochs: 20
+  lr: 0.001
+  patience: 4
+  seed: 42
+  latent_dim: 32
+  hidden1: 64
+  hidden2: 32
+
+thresholds:
+  spc_k: 3.0
+  evt_tail_quantile: 0.95
+  evt_target_prob: 0.001
+  percentile_target: 99.9
+
+state_machine:
+  persistence: 3
+  t_persist: 0.05
+
+paths:
+  artifacts_dir: "artifacts/validation"
+  results_dir: "results"

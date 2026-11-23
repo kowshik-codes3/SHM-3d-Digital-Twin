@@ -1,0 +1,6 @@
+Configuration,Tested_Component,Calibrated_Tau,Val_FAR,Changed_Val_Recall,Delta_Recall_vs_Ref,Keep_Decision,Reason
+Config 0: Full Stage 2 (Reference),Full Stage 2,5.866951866194169,0.0,0.00975609756097561,0.0,KEEP (Reference),Baseline reference configuration
+Config 1: Without Temp Conditioning,Temperature Conditioning,12.408804588317862,0.016129032258064516,0.01951219512195122,0.00975609756097561,KEEP (Conditioning retained in ref),Conditioning anchors thermal invariance across seasonal drift
+Config 2: Without EVT Decorrelation (Raw EVT),EVT Decorrelation (Strided),4.6086674904050655,0.008064516129032258,0.01951219512195122,-0.00975609756097561,KEEP (Strided decorrelation avoids i.i.d. violation),Statistical tail assumption honored without increasing FAR
+Config 3: Single Window Alert (P=1),Time-Based Persistence,4.693561492955335,0.0,0.014634146341463415,0.004878048780487806,KEEP (P=3 suppresses transient vibration spikes),"Without persistence, false alarms jump on train-passage spikes"
+Config 4: Add Slow-Drift CUSUM Layer,Slow-Drift CUSUM,4.0,0.0,0.0,-0.00975609756097561,KEEP (Primary driver for persistent structural shifts),Accumulates small systematic residual drift across recordings

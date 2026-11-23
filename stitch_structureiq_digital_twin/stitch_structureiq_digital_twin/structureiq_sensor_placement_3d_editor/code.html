@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#0f131d", "surface-bright": "#353944", "inverse-primary": "#006877", "secondary-fixed-dim": "#adc6ff", "tertiary": "#68f5b8", "on-primary-container": "#005763", "surface-variant": "#313540", "secondary-container": "#0566d9", "on-tertiary": "#003824", "surface-tint": "#2fd9f4", "inverse-on-surface": "#2c303b", "surface-container": "#1c1f2a", "primary": "#8aebff", "outline": "#859397", "on-surface": "#dfe2f1", "on-tertiary-fixed-variant": "#005236", "primary-fixed-dim": "#2fd9f4", "on-tertiary-container": "#005a3d", "secondary": "#adc6ff", "on-primary-fixed-variant": "#004e5a", "surface-container-highest": "#313540", "inverse-surface": "#dfe2f1", "on-primary-fixed": "#001f25", "tertiary-container": "#46d89d", "on-background": "#dfe2f1", "secondary-fixed": "#d8e2ff", "surface-container-lowest": "#0a0e18", "on-surface-variant": "#bbc9cd", "on-secondary-fixed-variant": "#004395", "error-container": "#93000a", "surface-dim": "#0f131d", "primary-fixed": "a2eeff", "surface-container-high": "#262a35", "surface-container-low": "#171b26", "on-error": "#690005", "surface": "#0f131d", "on-secondary": "#002e6a", "on-secondary-fixed": "#001a42", "tertiary-fixed": "#6ffbbe", "outline-variant": "#3c494c", "on-primary": "#00363e", "on-tertiary-fixed": "#002113", "primary-container": "#22d3ee", "error": "#ffb4ab", "on-secondary-container": "#e6ecff", "on-error-container": "#ffdad6", "tertiary-fixed-dim": "#4edea3" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "2rem", "space-xs": "0.25rem", "gutter-mobile": "0.75rem", "margin-mobile": "1rem", "space-sm": "0.5rem", "gutter": "1rem", "space-lg": "1.25rem", "space-md": "0.75rem", "margin": "1.5rem" }, "fontFamily": { "body-sm": ["Inter"], "headline-sm": ["Inter"], "headline-lg": ["Inter"], "display-lg-mobile": ["Inter"], "telemetry-md": ["JetBrains Mono"], "label-caps": ["JetBrains Mono"], "telemetry-sm": ["JetBrains Mono"], "display-lg": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "telemetry-lg": ["JetBrains Mono"] }, "fontSize": { "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "telemetry-md": ["14px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "label-caps": ["10px", { "lineHeight": "12px", "letterSpacing": "0.08em", "fontWeight": "600" }], "telemetry-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400" }], "telemetry-lg": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.02em", "fontWeight": "500" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest/95 backdrop-blur-xl border-r border-outline-variant/30 z-50 flex flex-col justify-between select-none"><div class="flex flex-col"><div class="h-[60px] px-space-md flex items-center justify-between border-b border-outline-variant/20"><div class="flex items-center gap-space-sm"><img alt="StructureIQ Hex Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VzIur6-8IFr58jZ5j4QwR0xeNPGGw5HfMOYChKkdDwgsytdACnpRtGnFaRrcv2W0v9yAJLo0aFEM_g-FYVds4z8MIWJj5sivIRwE37LG3mouU97vqfULGWeM4Zvr1BSKk1hQVFj03Xaz-_f3g8QAeyCcq295seeFrpsqeQ-17EIqCHLRBUbpATzuypbCE4jKCMwiSJrMoniSOxf2LsO_Hj-50phxOgZpPgNQgGabuEfRWsdDcja2X8pQ"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-semibold drop-shadow-[0_0_8px_rgba(34,211,238,0.35)]">StructureIQ</span></div><span class="font-label-caps text-label-caps uppercase px-space-xs py-0.5 rounded bg-surface-container-high text-primary border border-primary/20">v2.4 HUD</span></div><nav class="flex flex-col gap-1 p-space-sm" data-active-classes="bg-surface-container-high text-primary font-semibold border-l-2 border-primary shadow-[inset_0_0_12px_rgba(34,211,238,0.08)]"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="structures" href="#"><span class="material-symbols-outlined text-[18px]">layers</span><span>Structures</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="digital-twin" href="#"><span class="material-symbols-outlined text-[18px]">view_in_ar</span><span>Digital Twin</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="alerts" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">notifications_active</span><span>Alerts</span></div><span class="font-label-caps text-label-caps bg-error-container text-error px-1.5 py-0.5 rounded-full font-bold border border-error/30 shadow-[0_0_8px_rgba(239,68,68,0.35)]">3 CRIT</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="analytics" href="#"><span class="material-symbols-outlined text-[18px]">query_stats</span><span>Analytics</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="reports" href="#"><span class="material-symbols-outlined text-[18px]">description</span><span>Reports</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span>Settings</span></a></nav></div><div class="p-space-sm border-t border-outline-variant/20 flex flex-col gap-space-sm"><div class="p-space-sm rounded bg-surface-container-low/70 border border-outline-variant/20"><div class="flex items-center justify-between mb-1"><span class="font-label-caps text-label-caps text-on-surface-variant uppercase">MQTT Broker</span><span class="flex h-1.5 w-1.5 rounded-full bg-tertiary shadow-[0_0_6px_#68f5b8]"></span></div><div class="font-telemetry-sm text-telemetry-sm text-on-surface flex items-center justify-between"><span>12.4k msg/s</span><span class="text-tertiary">99.98%</span></div></div><button class="w-full flex items-center justify-between px-space-sm py-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded transition-colors text-body-sm font-body-sm" type="button"><span class="flex items-center gap-2 font-telemetry-sm text-telemetry-sm"><span class="material-symbols-outlined text-[16px]">keyboard_double_arrow_left</span>Collapse</span><span class="font-label-caps text-label-caps text-outline">[HUD]</span></button></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-[60px] bg-surface-container-lowest/90 backdrop-blur-xl border-b border-outline-variant/30 z-40 flex items-center justify-between px-space-md"><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low border border-outline-variant/30 cursor-pointer hover:border-outline transition-colors"><span class="material-symbols-outlined text-outline text-[16px]">domain</span><span class="font-body-sm text-body-sm text-on-surface font-medium">Apex Infrastructure Partners</span><span class="material-symbols-outlined text-outline text-[14px]">expand_more</span></div><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-high/60 border border-primary/20 cursor-pointer hover:border-primary/40 transition-colors"><span class="material-symbols-outlined text-primary text-[16px]">polyline</span><span class="font-body-sm text-body-sm text-primary font-medium">Golden Gate Cantilever Span #4</span><span class="font-label-caps text-label-caps text-tertiary ml-1">[ACTIVE TWIN]</span><span class="material-symbols-outlined text-outline text-[14px]">expand_more</span></div></div><div class="flex items-center w-80 relative"><span class="material-symbols-outlined absolute left-2.5 text-outline text-[16px]">search</span><input class="w-full bg-surface-container-low border border-outline-variant/30 rounded pl-8 pr-12 py-1 text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Jump to sensor, girder ID, alert..." type="text"/><span class="font-label-caps text-label-caps absolute right-2 text-outline bg-surface-container px-1 rounded border border-outline-variant/20">⌘K</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 px-2.5 py-1 rounded bg-surface-container-low border border-outline-variant/30"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span></span><span class="font-telemetry-sm text-telemetry-sm text-on-surface font-semibold">LIVE • 240Hz</span></div><div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-variant/40 border border-outline-variant/30"><span class="font-label-caps text-label-caps text-secondary font-bold uppercase">Demo Mode</span></div><button class="relative p-1.5 text-on-surface-variant hover:text-on-surface rounded hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-error ring-2 ring-background"></span></button><div class="h-5 w-px bg-outline-variant/30"></div><div class="flex items-center gap-space-sm pl-1"><div class="flex flex-col text-right"><span class="font-body-sm text-body-sm font-semibold text-on-surface leading-tight">Dr. Sarah Vance, P.E.</span><span class="font-label-caps text-label-caps text-outline uppercase">Chief Structural Lead</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary/40 shadow-[0_0_8px_rgba(34,211,238,0.2)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQy_gOEYgQTWFYN7SqbI6ahGwhonqOPkhNP3Zjc2ONhbgnyPdtZ2kCvirkPmXY0YTXYgU1hqsyaNUpfhNiqWF6MWmyyYZARdfzEIF9x-eW9A_WDdpeJ0Yi2yeZeqYD-w45WgqBtmyKYphnnoH2G3Gve9Vc_wuDEmzrP4kJQeQj8yV6M24oSPKO1UR-rbE0y3eU-oe8RcoLq3vIX13ZfxuwSvUZm9aFjiwVTUgtwtIAv5cunUH9aq0"/></div></div></header><main class="relative pt-[60px] w-full min-h-screen bg-background"><div class="flex flex-col w-full text-on-surface">
+<!-- TOP WORKFLOW SUB-HEADER & COORDINATE TOOLBAR -->
+<header class="bg-surface-container-lowest/80 backdrop-blur-md px-space-md py-2.5 flex flex-col gap-2 shadow-sm">
+<!-- Row 1: Breadcrumbs & Primary Actions -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<nav aria-label="Breadcrumb" class="flex items-center gap-1.5 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">
+<span class="hover:text-primary cursor-pointer transition-colors">Structures</span>
+<span class="text-outline-variant">/</span>
+<span class="hover:text-primary cursor-pointer transition-colors">Golden Gate Cantilever #4</span>
+<span class="text-outline-variant">/</span>
+<span class="text-primary font-semibold">Topology Editor</span>
+</nav>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[14px]">view_in_ar</span>
+<span class="text-on-surface font-medium">LOD-4_Cantilever.ifc</span>
+<span class="text-outline-variant">•</span>
+<span class="text-tertiary font-semibold">48/64 Channels</span>
+<span class="text-outline">(16 Staged)</span>
+</span>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-telemetry-sm text-telemetry-sm flex items-center gap-1.5 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Preview FEA Mesh</span>
+</button>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-telemetry-sm text-telemetry-sm flex items-center gap-1.5 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">hub</span>
+<span>Auto-Snap Nodes</span>
+</button>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-error/20 text-outline hover:text-error font-telemetry-sm text-telemetry-sm transition-all" type="button">
+          Discard
+        </button>
+<button class="px-3 py-1 rounded bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary font-telemetry-sm text-telemetry-sm font-semibold flex items-center gap-1.5 shadow-[0_0_12px_rgba(34,211,238,0.25)] transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">publish</span>
+<span>Publish Topology (v3.2)</span>
+</button>
+</div>
+</div>
+<!-- Row 2: Precision Snapping & Transform Tools -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-1 bg-surface-container-low/40 px-2 py-1 rounded">
+<div class="flex items-center gap-4">
+<!-- Coordinate Reference Frame -->
+<div class="flex items-center gap-1">
+<span class="font-label-caps text-label-caps text-outline uppercase mr-1">Datum:</span>
+<div class="inline-flex rounded bg-surface-container-lowest p-0.5">
+<button class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-telemetry-sm text-telemetry-sm font-semibold" type="button">Local BIM Girder</button>
+<button class="px-2 py-0.5 text-on-surface-variant hover:text-on-surface font-telemetry-sm text-telemetry-sm" type="button">WGS84 UTM</button>
+</div>
+</div>
+<!-- Snap Options -->
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-outline uppercase">Snap:</span>
+<label class="flex items-center gap-1 cursor-pointer font-telemetry-sm text-telemetry-sm text-on-surface">
+<input checked="" class="accent-primary rounded bg-surface-container" type="checkbox"/>
+<span>Girder Flange</span>
+</label>
+<label class="flex items-center gap-1 cursor-pointer font-telemetry-sm text-telemetry-sm text-on-surface">
+<input checked="" class="accent-primary rounded bg-surface-container" type="checkbox"/>
+<span>Weld Seam</span>
+</label>
+<label class="flex items-center gap-1 cursor-pointer font-telemetry-sm text-telemetry-sm text-outline">
+<input class="accent-primary rounded bg-surface-container" type="checkbox"/>
+<span>FEA Node</span>
+</label>
+</div>
+</div>
+<!-- Gizmo Controls & Pitch Grid -->
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1 bg-surface-container-lowest p-0.5 rounded">
+<button class="p-1 rounded bg-surface-container-high text-primary" title="Translate (W)" type="button"><span class="material-symbols-outlined text-[16px]">open_with</span></button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface" title="Rotate (E)" type="button"><span class="material-symbols-outlined text-[16px]">sync</span></button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface" title="Surface Normal Pin (R)" type="button"><span class="material-symbols-outlined text-[16px]">vertical_align_bottom</span></button>
+</div>
+<div class="flex items-center gap-1 font-telemetry-sm text-telemetry-sm">
+<span class="text-outline font-label-caps text-label-caps uppercase">Grid:</span>
+<button class="px-1.5 py-0.5 rounded bg-surface-container hover:bg-surface-container-high text-outline hover:text-on-surface" type="button">0.1m</button>
+<button class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-semibold" type="button">0.5m</button>
+<button class="px-1.5 py-0.5 rounded bg-surface-container hover:bg-surface-container-high text-outline hover:text-on-surface" type="button">1.0m</button>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN THREE-COLUMN EDITOR CANVAS -->
+<div class="grid grid-cols-12 gap-0 w-full flex-1 min-h-[calc(100vh-125px)]">
+<!-- LEFT COLUMN: SENSOR CHANNEL INVENTORY & STAGING (3 cols, ~300px) -->
+<aside class="col-span-12 xl:col-span-3 bg-surface-container-lowest/90 backdrop-blur-md p-space-md flex flex-col justify-between shadow-lg">
+<div class="flex flex-col gap-3">
+<!-- Search and Quick Add -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Channels</span>
+<span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-semibold">48 ACTIVE</span>
+</div>
+<button class="px-2 py-1 rounded bg-primary-container/20 text-primary hover:bg-primary hover:text-on-primary font-telemetry-sm text-telemetry-sm font-semibold flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span>
+<span>New Pin</span>
+</button>
+</div>
+<!-- Filter Row -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-2 top-2 text-[16px] text-outline">search</span>
+<input class="w-full bg-surface-container-low rounded pl-7 pr-3 py-1.5 font-telemetry-sm text-telemetry-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Filter ID, bay, or transducer..." type="text"/>
+</div>
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-label-caps font-label-caps uppercase">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-bold cursor-pointer">All (64)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant hover:text-on-surface cursor-pointer">Optical FBG</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant hover:text-on-surface cursor-pointer">Triaxial Acc</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant hover:text-on-surface cursor-pointer">LVDT Tilt</span>
+</div>
+<!-- Sensor Node List -->
+<div class="flex flex-col gap-1.5 overflow-y-auto max-h-[calc(100vh-370px)] pr-1">
+<!-- Sensor Item 1: SELECTED (Active Strain) -->
+<div class="p-2.5 rounded bg-surface-container-high cursor-pointer shadow-[0_0_12px_rgba(34,211,238,0.18)] transition-all flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
+<span class="font-telemetry-md text-telemetry-md font-semibold text-primary">SN-02</span>
+<span class="font-label-caps text-label-caps text-outline bg-surface-container px-1 rounded uppercase">Optical FBG</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-semibold">142.8 με</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="truncate">Mid-Span Lower Cord G-14</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">Bay 18-B</span>
+</div>
+<div class="flex items-center justify-between text-label-caps font-label-caps text-outline-variant mt-0.5">
+<span>Channel: Opt-03 @ 1550nm</span>
+<span class="text-tertiary">Pinned &amp; Locked</span>
+</div>
+</div>
+<!-- Sensor Item 2: Active Cable Tension -->
+<div class="p-2.5 rounded bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-telemetry-md text-telemetry-md font-medium text-on-surface">SN-03</span>
+<span class="font-label-caps text-label-caps text-outline bg-surface-container px-1 rounded uppercase">FBG Tension</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-medium">842 kN</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="truncate">Stay Cable Anchor CB-08</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">Bay 12-A</span>
+</div>
+</div>
+<!-- Sensor Item 3: Active Accelerometer -->
+<div class="p-2.5 rounded bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-telemetry-md text-telemetry-md font-medium text-on-surface">AC-02</span>
+<span class="font-label-caps text-label-caps text-outline bg-surface-container px-1 rounded uppercase">Triaxial</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary font-medium">0.032 g</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="truncate">North Pier Pylon Top</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">Tower-N</span>
+</div>
+</div>
+<!-- Sensor Item 4: Warning / Elevated Deflection -->
+<div class="p-2.5 rounded bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></span>
+<span class="font-telemetry-md text-telemetry-md font-medium text-on-surface">TL-01</span>
+<span class="font-label-caps text-label-caps text-outline bg-surface-container px-1 rounded uppercase">Inclinometer</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary-fixed-dim font-medium">+0.14°</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="truncate">South Tower Base Plinth</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">Pylon-S</span>
+</div>
+</div>
+<!-- Sensor Item 5: Uncalibrated LVDT -->
+<div class="p-2.5 rounded bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="font-telemetry-md text-telemetry-md font-medium text-on-surface">DP-04</span>
+<span class="font-label-caps text-label-caps text-outline bg-surface-container px-1 rounded uppercase">LVDT</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">CALIBRATING</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="truncate">Expansion Joint Ex-02</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">Pier 3</span>
+</div>
+</div>
+<!-- UNASSIGNED DRAGGABLE SENSORS SECTION -->
+<div class="pt-2">
+<div class="flex items-center justify-between py-1">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Unassigned Hardware Pins</span>
+<span class="font-label-caps text-label-caps text-primary">DRAG TO 3D MODEL</span>
+</div>
+<!-- Draggable Item A -->
+<div class="mt-1.5 p-2 rounded bg-surface-container hover:bg-surface-container-high cursor-grab active:cursor-grabbing transition-all flex items-center justify-between group" draggable="true">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-[18px]">drag_indicator</span>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-semibold text-primary">SN-05 [Staged]</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant text-[11px]">Foil Strain Gauge • με</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-surface-container-highest text-outline group-hover:text-primary">STAGE</span>
+</div>
+<!-- Draggable Item B -->
+<div class="mt-1.5 p-2 rounded bg-surface-container hover:bg-surface-container-high cursor-grab active:cursor-grabbing transition-all flex items-center justify-between group" draggable="true">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-[18px]">drag_indicator</span>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-semibold text-tertiary">TM-08 [Staged]</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant text-[11px]">PT100 Surface RTD • °C</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-surface-container-highest text-outline group-hover:text-tertiary">STAGE</span>
+</div>
+<!-- Draggable Item C -->
+<div class="mt-1.5 p-2 rounded bg-surface-container hover:bg-surface-container-high cursor-grab active:cursor-grabbing transition-all flex items-center justify-between group" draggable="true">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-[18px]">drag_indicator</span>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-semibold text-secondary">AC-09 [Staged]</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant text-[11px]">Seismic MEMS Pod • ±16g</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-surface-container-highest text-outline group-hover:text-secondary">STAGE</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Left Bottom: Hardware Bus / DAQ Interrogator Utilization -->
+<div class="p-2.5 rounded bg-surface-container-low mt-3 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant font-semibold">DAQ Interrogator Loops</span>
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary">ONLINE</span>
+</div>
+<!-- Progress Bar 1: FBG Optical -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-telemetry-sm text-telemetry-sm text-on-surface">
+<span>FBG Loop 1 (Ch 1-32)</span>
+<span class="text-primary">87% (28/32)</span>
+</div>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 87%"></div>
+</div>
+</div>
+<!-- Progress Bar 2: Modbus RS485 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-telemetry-sm text-telemetry-sm text-on-surface">
+<span>RS485 Modbus Hub</span>
+<span class="text-secondary">42% (10/24)</span>
+</div>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 42%"></div>
+</div>
+</div>
+</div>
+</aside>
+<!-- CENTER VIEWPORT: INTERACTIVE 3D BIM TWIN & SENSOR PLACEMENT (6 cols, expansive) -->
+<main class="col-span-12 xl:col-span-6 relative bg-surface-container-lowest overflow-hidden flex flex-col justify-between select-none">
+<!-- Top Left Viewport Camera Controls -->
+<div class="absolute top-3 left-3 z-20 flex items-center gap-1 bg-surface-container-lowest/80 backdrop-blur-md p-1 rounded shadow-md">
+<button class="px-2 py-1 rounded bg-surface-container-high text-primary font-telemetry-sm text-telemetry-sm font-semibold" type="button">Perspective</button>
+<button class="px-2 py-1 rounded text-on-surface-variant hover:text-on-surface font-telemetry-sm text-telemetry-sm" type="button">Top (XZ)</button>
+<button class="px-2 py-1 rounded text-on-surface-variant hover:text-on-surface font-telemetry-sm text-telemetry-sm" type="button">Side (XY)</button>
+<button class="px-2 py-1 rounded text-on-surface-variant hover:text-on-surface font-telemetry-sm text-telemetry-sm" type="button">Cross-Sec</button>
+<div class="h-4 w-px bg-surface-container-high mx-1"></div>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface" title="Zoom Extents" type="button"><span class="material-symbols-outlined text-[16px]">crop_free</span></button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface" title="Reset Orbit" type="button"><span class="material-symbols-outlined text-[16px]">restart_alt</span></button>
+</div>
+<!-- Top Right Viewport HUD: 3D Gizmo Cube & Shading Mode -->
+<div class="absolute top-3 right-3 z-20 flex flex-col items-end gap-2">
+<div class="bg-surface-container-lowest/80 backdrop-blur-md p-2 rounded flex flex-col items-center shadow-md">
+<!-- Orientation Indicator -->
+<div class="w-14 h-14 relative flex items-center justify-center">
+<div class="w-10 h-10 border border-primary/30 rounded flex items-center justify-center rotate-12 relative bg-surface-container-low/60">
+<span class="absolute top-0 text-[9px] font-label-caps text-error font-bold">+Y</span>
+<span class="absolute right-0 text-[9px] font-label-caps text-primary font-bold">+X</span>
+<span class="absolute bottom-0 text-[9px] font-label-caps text-secondary font-bold">+Z</span>
+<span class="text-[10px] font-bold text-on-surface">N</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-outline uppercase mt-1">Azimuth: 14.2°</span>
+</div>
+<!-- Render Style Selector -->
+<div class="bg-surface-container-lowest/80 backdrop-blur-md px-2 py-1 rounded flex items-center gap-1 shadow-md">
+<button class="p-1 rounded bg-surface-container-high text-primary" title="FEA Stress Heatmap" type="button"><span class="material-symbols-outlined text-[16px]">thermostat</span></button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface" title="Wireframe X-Ray" type="button"><span class="material-symbols-outlined text-[16px]">grid_4x4</span></button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface" title="Solid BIM Shaded" type="button"><span class="material-symbols-outlined text-[16px]">deployed_code</span></button>
+</div>
+</div>
+<!-- 3D BIM SIMULATION CANVAS (SVG Vector Wireframe Simulation) -->
+<div class="w-full h-full min-h-[540px] flex items-center justify-center relative bg-gradient-to-b from-surface-container-lowest via-surface-container-low/40 to-surface-container-lowest">
+<!-- Subtle Spatial Coordinate Grid Backdrop -->
+<svg class="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="40" id="grid-pattern" patternunits="userSpaceOnUse" width="40">
+<path class="text-outline-variant" d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid-pattern)" height="100%" width="100%"></rect>
+</svg>
+<!-- Dynamic Structural Cantilever Mesh Illustration -->
+<svg class="w-full h-full max-w-2xl max-h-[460px] pointer-events-auto" fill="none" viewbox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+<!-- Tower Pylon Main Columns -->
+<path d="M 120 40 L 140 460" stroke="#313540" stroke-linecap="round" stroke-width="8"></path>
+<path d="M 160 40 L 180 460" stroke="#313540" stroke-linecap="round" stroke-width="8"></path>
+<path d="M 120 120 L 170 120 M 125 220 L 175 220 M 130 320 L 180 320" stroke="#3c494c" stroke-width="2"></path>
+<!-- Pier Foundation -->
+<polygon fill="#171b26" points="90,460 210,460 230,490 70,490" stroke="#313540" stroke-width="2"></polygon>
+<!-- Main Suspension Cable Curve -->
+<path d="M 130 60 Q 340 320, 760 300" fill="none" stroke="#3c494c" stroke-width="3"></path>
+<path d="M 130 60 Q 340 320, 760 300" fill="none" opacity="0.4" stroke="#2fd9f4" stroke-dasharray="4 6" stroke-width="1"></path>
+<!-- Vertical Hanger Suspender Lines -->
+<line stroke="#3c494c" stroke-width="1.5" x1="240" x2="240" y1="210" y2="350"></line>
+<line stroke="#3c494c" stroke-width="1.5" x1="320" x2="320" y1="270" y2="350"></line>
+<line stroke="#3c494c" stroke-width="1.5" x1="400" x2="400" y1="300" y2="350"></line>
+<line stroke="#3c494c" stroke-width="1.5" x1="480" x2="480" y1="312" y2="350"></line>
+<line stroke="#3c494c" stroke-width="1.5" x1="560" x2="560" y1="310" y2="350"></line>
+<line stroke="#3c494c" stroke-width="1.5" x1="640" x2="640" y1="305" y2="350"></line>
+<!-- Cantilever Lower Chord Girder Truss (Main Focus) -->
+<g id="girder-deck">
+<!-- Lower Chord -->
+<line opacity="0.9" stroke="#2fd9f4" stroke-width="3" x1="140" x2="760" y1="350" y2="350"></line>
+<!-- Upper Deck Rail -->
+<line opacity="0.6" stroke="#859397" stroke-width="2" x1="140" x2="760" y1="320" y2="320"></line>
+<!-- Diagonal Cross Bracing (FEA Triangles) -->
+<path d="M 140 350 L 180 320 L 220 350 L 260 320 L 300 350 L 340 320 L 380 350 L 420 320 L 460 350 L 500 320 L 540 350 L 580 320 L 620 350 L 660 320 L 700 350 L 740 320" fill="none" stroke="#3c494c" stroke-width="1.5"></path>
+<path d="M 140 320 L 180 350 L 220 320 L 260 350 L 300 320 L 340 350 L 380 320 L 420 350 L 460 320 L 500 350 L 540 320 L 580 350 L 620 320 L 660 350 L 700 320 L 740 350" fill="none" stroke="#3c494c" stroke-width="1.5"></path>
+<path d="M 180 320 L 180 350 M 260 320 L 260 350 M 340 320 L 340 350 M 420 320 L 420 350 M 500 320 L 500 350 M 580 320 L 580 350 M 660 320 L 660 350" stroke="#313540" stroke-width="1"></path>
+</g>
+<!-- Finite Element Stress Thermal Gradient on Critical Zone (Bay 18-B) -->
+<ellipse cx="460" cy="350" fill="#22d3ee" filter="blur(10px)" opacity="0.15" rx="70" ry="24"></ellipse>
+<!-- PLACED SENSOR 1: SN-03 (Cable Tension) -->
+<g class="cursor-pointer group" transform="translate(240, 210)">
+<circle cx="0" cy="0" fill="#adc6ff" opacity="0.2" r="10"></circle>
+<circle cx="0" cy="0" fill="#adc6ff" r="4"></circle>
+<rect fill="#0f131d" height="16" opacity="0.85" rx="2" width="60" x="8" y="-12"></rect>
+<text fill="#adc6ff" font-family="JetBrains Mono" font-size="9" font-weight="600" x="12" y="-1">SN-03 [FBG]</text>
+</g>
+<!-- PLACED SENSOR 2: AC-02 (Pier Vibration) -->
+<g class="cursor-pointer group" transform="translate(130, 70)">
+<circle cx="0" cy="0" fill="#68f5b8" opacity="0.2" r="12"></circle>
+<circle cx="0" cy="0" fill="#68f5b8" r="4"></circle>
+<rect fill="#0f131d" height="16" opacity="0.85" rx="2" width="64" x="10" y="-10"></rect>
+<text fill="#68f5b8" font-family="JetBrains Mono" font-size="9" font-weight="600" x="14" y="2">AC-02 [3-AX]</text>
+</g>
+<!-- PLACED SENSOR 3: TL-01 (Pylon Inclinometer) -->
+<g class="cursor-pointer group" transform="translate(180, 420)">
+<circle cx="0" cy="0" fill="#adc6ff" opacity="0.2" r="9"></circle>
+<circle cx="0" cy="0" fill="#adc6ff" r="4"></circle>
+<rect fill="#0f131d" height="16" opacity="0.85" rx="2" width="62" x="10" y="-8"></rect>
+<text fill="#adc6ff" font-family="JetBrains Mono" font-size="9" font-weight="600" x="14" y="4">TL-01 [TILT]</text>
+</g>
+<!-- ACTIVE SELECTED SENSOR PIN: SN-02 (Mid-Span Lower Chord) -->
+<g id="selected-sensor-pin" transform="translate(460, 350)">
+<!-- Girder Normal Surface Anchor Ring -->
+<ellipse cx="0" cy="0" fill="none" rx="14" ry="7" stroke="#2fd9f4" stroke-dasharray="3 3" stroke-width="1.5"></ellipse>
+<!-- Vertical Stand-off Stanchion -->
+<line stroke="#22d3ee" stroke-dasharray="2 2" stroke-width="2" x1="0" x2="0" y1="0" y2="-45"></line>
+<!-- Dynamic 3D Transform Gizmo Handle -->
+<g transform="translate(0, -45)">
+<!-- X Axis (Red) -->
+<line stroke="#ffb4ab" stroke-width="2.5" x1="0" x2="38" y1="0" y2="0"></line>
+<polygon fill="#ffb4ab" points="38,-3 44,0 38,3"></polygon>
+<text fill="#ffb4ab" font-family="JetBrains Mono" font-size="8" x="47" y="3">X</text>
+<!-- Y Axis (Cyan / Up) -->
+<line stroke="#8aebff" stroke-width="2.5" x1="0" x2="0" y1="0" y2="-38"></line>
+<polygon fill="#8aebff" points="-3,-38 0,-44 3,-38"></polygon>
+<text fill="#8aebff" font-family="JetBrains Mono" font-size="8" x="5" y="-38">Y</text>
+<!-- Z Axis (Blue / Depth) -->
+<line stroke="#adc6ff" stroke-width="2.5" x1="0" x2="-22" y1="0" y2="20"></line>
+<polygon fill="#adc6ff" points="-25,18 -26,24 -20,22"></polygon>
+<text fill="#adc6ff" font-family="JetBrains Mono" font-size="8" x="-32" y="28">Z</text>
+<!-- Center Glowing Pivot Sphere -->
+<circle class="filter drop-shadow-[0_0_8px_#22d3ee]" cx="0" cy="0" fill="#22d3ee" r="7"></circle>
+<circle cx="0" cy="0" fill="#00363e" r="3"></circle>
+<!-- Floating HUD Label Tag -->
+<g transform="translate(18, -25)">
+<rect fill="#0f131d" height="34" opacity="0.95" rx="3" stroke="#2fd9f4" stroke-width="1" width="138" x="0" y="0"></rect>
+<text fill="#8aebff" font-family="JetBrains Mono" font-size="11" font-weight="700" x="8" y="14">SN-02 [FBG Strain]</text>
+<text fill="#bbc9cd" font-family="JetBrains Mono" font-size="9" x="8" y="27">X: 38.245 | Y: -14.120</text>
+</g>
+</g>
+</g>
+<!-- GHOST HOVER PIN TARGET (Girder Bay 19-A snap) -->
+<g opacity="0.75" transform="translate(540, 350)">
+<circle class="animate-pulse" cx="0" cy="0" fill="none" r="16" stroke="#68f5b8" stroke-dasharray="4 4" stroke-width="1.5"></circle>
+<circle cx="0" cy="0" fill="#68f5b8" r="3"></circle>
+<!-- Caliper Dimension Line to nearest FEA weld node -->
+<line stroke="#68f5b8" stroke-dasharray="2 2" stroke-width="1" x1="0" x2="-40" y1="0" y2="0"></line>
+<rect fill="#0a0e18" height="14" opacity="0.8" rx="2" width="80" x="-70" y="-18"></rect>
+<text fill="#68f5b8" font-family="JetBrains Mono" font-size="8" x="-66" y="-8">Δ=0.42m to #4012</text>
+</g>
+</svg>
+<!-- Viewport Bottom Left Mesh Stats -->
+<div class="absolute bottom-3 left-3 z-20 bg-surface-container-lowest/80 backdrop-blur-md px-3 py-2 rounded flex flex-col gap-0.5 shadow-md">
+<div class="flex items-center gap-2 font-telemetry-sm text-telemetry-sm text-on-surface">
+<span class="text-primary font-semibold">BIM Vertices:</span>
+<span class="text-on-surface font-mono">142,850</span>
+<span class="text-outline-variant">|</span>
+<span class="text-primary font-semibold">LOD:</span>
+<span class="text-on-surface">4 (Structural)</span>
+</div>
+<div class="flex items-center gap-2 font-telemetry-sm text-telemetry-sm text-outline">
+<span>Co-registered Entities: 1,842</span>
+<span>•</span>
+<span class="text-tertiary">FEA Concordance: 99.8%</span>
+</div>
+</div>
+<!-- Viewport Bottom Center Quick Palette HUD -->
+<div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-3 shadow-lg">
+<span class="font-label-caps text-label-caps text-outline uppercase">Quick Drop:</span>
+<button class="flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container hover:bg-surface-container-high text-primary font-telemetry-sm text-telemetry-sm transition-all" title="Shortcut [1]" type="button">
+<span class="material-symbols-outlined text-[14px]">sensors</span>
+<span>Strain [1]</span>
+</button>
+<button class="flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container hover:bg-surface-container-high text-secondary font-telemetry-sm text-telemetry-sm transition-all" title="Shortcut [2]" type="button">
+<span class="material-symbols-outlined text-[14px]">vibration</span>
+<span>Accel [2]</span>
+</button>
+<button class="flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container hover:bg-surface-container-high text-tertiary font-telemetry-sm text-telemetry-sm transition-all" title="Shortcut [3]" type="button">
+<span class="material-symbols-outlined text-[14px]">device_thermostat</span>
+<span>Temp [3]</span>
+</button>
+<div class="h-3 w-px bg-surface-container-high"></div>
+<button class="p-1 rounded text-outline hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[16px]">fullscreen</span></button>
+</div>
+</div>
+</main>
+<!-- RIGHT COLUMN: SENSOR CONFIGURATION & CALIBRATION INSPECTOR (3 cols, ~340px) -->
+<aside class="col-span-12 xl:col-span-3 bg-surface-container-lowest/90 backdrop-blur-md p-space-md flex flex-col justify-between overflow-y-auto max-h-[calc(100vh-125px)] shadow-lg">
+<div class="flex flex-col gap-4">
+<!-- Selected Sensor Header -->
+<div class="flex flex-col gap-1 pb-2 bg-surface-container-low/50 p-2.5 rounded">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="p-1 rounded bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-[18px]">straighten</span>
+</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold leading-none">SN-02</span>
+<span class="font-label-caps text-label-caps block text-outline font-mono">sns-fbg-8849-002</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-tertiary/20 text-tertiary font-bold tracking-wider uppercase">ONLINE</span>
+</div>
+<input class="mt-1.5 w-full bg-surface-container font-body-sm text-body-sm text-on-surface px-2 py-1 rounded focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="Mid-Span Lower Cord G-14"/>
+</div>
+<!-- SECTION 1: Spatial Placement & Coordinates -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold tracking-wider">1. Spatial Coordinates (±0.001m)</span>
+<span class="font-label-caps text-label-caps text-outline">LOD-4 CAD PIN</span>
+</div>
+<!-- X / Y / Z Grid Inputs -->
+<div class="grid grid-cols-3 gap-1.5">
+<div class="flex flex-col bg-surface-container-low p-1.5 rounded">
+<span class="font-label-caps text-label-caps text-error font-bold">X [m]</span>
+<input class="bg-transparent font-telemetry-sm text-telemetry-sm text-on-surface focus:outline-none font-mono" type="text" value="38.245"/>
+</div>
+<div class="flex flex-col bg-surface-container-low p-1.5 rounded">
+<span class="font-label-caps text-label-caps text-primary font-bold">Y [m]</span>
+<input class="bg-transparent font-telemetry-sm text-telemetry-sm text-on-surface focus:outline-none font-mono" type="text" value="-14.120"/>
+</div>
+<div class="flex flex-col bg-surface-container-low p-1.5 rounded">
+<span class="font-label-caps text-label-caps text-secondary font-bold">Z [m]</span>
+<input class="bg-transparent font-telemetry-sm text-telemetry-sm text-on-surface focus:outline-none font-mono" type="text" value="0.082"/>
+</div>
+</div>
+<!-- Normal Offset & Orientation -->
+<div class="grid grid-cols-2 gap-1.5 text-telemetry-sm font-telemetry-sm">
+<div class="bg-surface-container-low p-1.5 rounded flex justify-between items-center">
+<span class="text-outline">Offset (Norm):</span>
+<span class="text-on-surface font-mono">+2.5 mm</span>
+</div>
+<div class="bg-surface-container-low p-1.5 rounded flex justify-between items-center">
+<span class="text-outline">Yaw/Pitch:</span>
+<span class="text-on-surface font-mono">14.5° / 0.0°</span>
+</div>
+</div>
+<!-- Associated BIM Element & FEA Binding -->
+<div class="flex flex-col gap-1 text-telemetry-sm font-telemetry-sm bg-surface-container-low p-2 rounded">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-outline">BIM Parent:</span>
+<span class="text-primary font-medium hover:underline cursor-pointer truncate max-w-[160px]">Girder G-14 Flange</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-outline">FEA Node Ref:</span>
+<span class="text-tertiary font-mono">Node #4011 (Bending Moment Max)</span>
+</div>
+</div>
+</div>
+<!-- SECTION 2: Telemetry & Acquisition Settings -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold tracking-wider">2. Acquisition &amp; Channel</span>
+<span class="font-label-caps text-label-caps text-tertiary">240 Hz SYNC</span>
+</div>
+<!-- Sampling Frequency Selector -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Sampling Rate:</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-semibold">240 Hz (4.6 kB/s)</span>
+</div>
+<input class="accent-primary w-full cursor-pointer bg-surface-container rounded-lg h-1" max="1000" min="10" step="10" type="range" value="240"/>
+</div>
+<!-- Port & Physical Properties -->
+<div class="grid grid-cols-2 gap-1.5 text-telemetry-sm font-telemetry-sm">
+<div class="bg-surface-container-low p-1.5 rounded flex flex-col">
+<span class="font-label-caps text-label-caps text-outline">INTERROGATOR PORT</span>
+<span class="text-on-surface font-mono">Opt-3 (1550nm CW)</span>
+</div>
+<div class="bg-surface-container-low p-1.5 rounded flex flex-col">
+<span class="font-label-caps text-label-caps text-outline">DYNAMIC RANGE</span>
+<span class="text-on-surface font-mono">±5000 με (0.1 με)</span>
+</div>
+</div>
+<!-- Thermal Compensation Pairing -->
+<div class="bg-surface-container-low p-2 rounded flex items-center justify-between text-telemetry-sm font-telemetry-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">thermostat</span>
+<span class="text-on-surface-variant">Temp Comp:</span>
+</div>
+<span class="text-tertiary font-mono">Paired with TM-04</span>
+</div>
+</div>
+<!-- SECTION 3: Thresholds & AI Trigger Envelopes -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold tracking-wider">3. AI Envelopes &amp; Limits</span>
+<span class="font-label-caps text-label-caps text-outline">DEFCON LIMITS</span>
+</div>
+<!-- Limit Micro-Inputs -->
+<div class="grid grid-cols-3 gap-1 text-center font-telemetry-sm text-telemetry-sm">
+<div class="bg-surface-container-low p-1 rounded">
+<span class="font-label-caps text-label-caps text-outline block">NOMINAL</span>
+<span class="text-on-surface font-mono">35.0 με</span>
+</div>
+<div class="bg-surface-container-low p-1 rounded">
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim block">WARNING</span>
+<span class="text-secondary-fixed-dim font-mono">85.0 με</span>
+</div>
+<div class="bg-surface-container-low p-1 rounded">
+<span class="font-label-caps text-label-caps text-error block">CRITICAL</span>
+<span class="text-error font-mono">110.0 με</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 pt-1 text-telemetry-sm font-telemetry-sm">
+<label class="flex items-center gap-2 cursor-pointer text-on-surface-variant">
+<input checked="" class="accent-primary rounded bg-surface-container" type="checkbox"/>
+<span>Autoencoder Dynamic Corridor (±2.5σ)</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer text-on-surface-variant">
+<input checked="" class="accent-primary rounded bg-surface-container" type="checkbox"/>
+<span>FFT Harmonic Rejection Filter (&gt;5.0 Hz)</span>
+</label>
+</div>
+</div>
+<!-- SECTION 4: Live Telemetry Sparkline & Signal Diagnostic -->
+<div class="flex flex-col gap-1.5 bg-surface-container-low p-2.5 rounded">
+<div class="flex items-center justify-between font-telemetry-sm text-telemetry-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary shadow-[0_0_6px_#68f5b8]"></span>
+<span class="text-on-surface font-medium">Live Strain Stream</span>
+</div>
+<span class="text-primary font-mono font-semibold">142.8 με</span>
+</div>
+<!-- Mini Inline SVG Sparkline -->
+<div class="w-full h-9 bg-surface-container rounded overflow-hidden relative">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 30">
+<path d="M 0 18 Q 10 12, 20 19 T 40 14 T 60 22 T 80 11 L 100 16" fill="none" stroke="#2fd9f4" stroke-width="1.5"></path>
+<path d="M 0 18 Q 10 12, 20 19 T 40 14 T 60 22 T 80 11 L 100 16 L 100 30 L 0 30 Z" fill="#2fd9f4" opacity="0.1"></path>
+</svg>
+</div>
+<div class="flex items-center justify-between text-label-caps font-label-caps text-outline pt-0.5">
+<span>Laser Return: -42.8 dBm</span>
+<span class="text-tertiary">SNR: 34 dB (Optimal)</span>
+</div>
+</div>
+</div>
+<!-- Right Column Footer Actions -->
+<div class="flex flex-col gap-1.5 pt-3">
+<div class="grid grid-cols-2 gap-2">
+<button class="px-2 py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-telemetry-sm text-telemetry-sm flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+<span>Zero Baseline</span>
+</button>
+<button class="px-2 py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-telemetry-sm text-telemetry-sm flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">network_ping</span>
+<span>Ping Optical Ch</span>
+</button>
+</div>
+<button class="w-full px-2 py-1.5 rounded bg-surface-container hover:bg-error-container text-outline hover:text-error font-telemetry-sm text-telemetry-sm transition-colors text-center" type="button">
+          Unbind Pin from Model
+        </button>
+</div>
+</aside>
+</div>
+</div></main></div></body></html>

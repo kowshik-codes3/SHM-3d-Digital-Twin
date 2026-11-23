@@ -1,0 +1,34 @@
+{
+  "is_valid": true,
+  "file_size_bytes": 940,
+  "file_size_mb": 0.001,
+  "triangle_count": 12,
+  "vertex_count": 8,
+  "mesh_count": 1,
+  "bounding_box_meters": {
+    "min": [
+      -7.5,
+      0.0,
+      -1.5
+    ],
+    "max": [
+      7.5,
+      2.0,
+      1.5
+    ],
+    "dimensions": [
+      15.0,
+      2.0,
+      3.0
+    ]
+  },
+  "unnamed_meshes_count": 1,
+  "warnings": [
+    {
+      "code": "UNNAMED_MESHES",
+      "message": "1 mesh(es) lacked semantic CAD names and were assigned default part names.",
+      "severity": "INFO"
+    }
+  ],
+  "hard_blockers": []
+}

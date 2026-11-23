@@ -1,0 +1,20 @@
+{
+  "duration_sec": 3602.25,
+  "frames_sent": 3600,
+  "frames_processed": 3600,
+  "samples_processed": 180000,
+  "nominal_fps": 1.0,
+  "effective_fps": 0.9994,
+  "dropped_frames": 0,
+  "lag_mean_sec": 0.0099,
+  "lag_max_sec": 0.012,
+  "rss_start_mb": 331.3,
+  "rss_end_mb": 21.26,
+  "rss_slope_kb_per_hour": -74377.13,
+  "rss_slope_se_kb_per_hour": 4634.46,
+  "n_rss_samples": 361,
+  "hardware": {
+    "platform": "Windows-10-10.0.26300-SP0",
+    "cpu_count": 12
+  }
+}

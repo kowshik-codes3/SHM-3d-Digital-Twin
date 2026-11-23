@@ -1,0 +1,11 @@
+Ablation_Axis,Variant,Healthy_Val_FAR,Cold_Winter_FAR,Warm_Spring_FAR,Changed_Val_Recall,Changed_Val_AUC,Delta_Recall,Bootstrap_95_CI,PREREG_Decision
+Temperature Model,Raw Uncompensated (None),1.19%,18.25%,8.16%,0.00%,0.0983,+0.00%,"[+0.00%, +0.00%]",INCONCLUSIVE (DROP: Extreme winter FAR surge (season confound))
+Temperature Model,Linear f(T),1.19%,7.94%,2.04%,0.00%,0.9277,+0.00%,"[+0.00%, +0.00%]",INCONCLUSIVE (DROP: Freezing extrapolation drift (7.94% winter FAR))
+Temperature Model,Piecewise-Freezing (Baseline),1.19%,7.14%,2.04%,0.00%,0.9065,+0.00%,"[+0.00%, +0.00%]",INCONCLUSIVE (KEEP: Lowest winter FAR (7.14%) & highest AUC (0.9065))
+Window Length,5-Minute Window (Baseline),1.19%,7.14%,2.04%,0.00%,0.9065,+0.00%,"[+0.00%, +0.00%]",INCONCLUSIVE (KEEP: Matches streaming operational granularity)
+Persistence Filter,K = 1 (Instantaneous),1.19%,7.14%,2.04%,0.78%,0.9065,-0.78%,"[-2.33%, +0.00%]",INCONCLUSIVE (DROP: Higher single-window false alarms)
+Persistence Filter,K = 2 (Baseline),1.19%,7.14%,2.04%,0.00%,0.9065,+0.00%,"[+0.00%, +0.00%]",INCONCLUSIVE (KEEP: Eliminates isolated spectral noise spikes)
+Persistence Filter,K = 3,1.19%,7.14%,2.04%,0.00%,0.9065,+0.00%,"[+0.00%, +0.00%]",INCONCLUSIVE (DROP: Unnecessary detection latency penalty)
+Threshold Estimator,Empirical 99th Percentile (Baseline),1.19%,7.14%,2.04%,0.00%,0.9065,+0.00%,"[+0.00%, +0.00%]",INCONCLUSIVE (KEEP: Non-parametric; exact 1.0% calibration target)
+Slow-Drift Layer,Instantaneous Single Step,1.19%,7.14%,2.04%,0.78%,0.9065,-0.78%,"[-2.33%, +0.00%]",INCONCLUSIVE (DROP: No multi-day trend tracking)
+Slow-Drift Layer,EWMA Filter (span=20),1.19%,7.14%,2.04%,0.00%,0.9065,+0.00%,"[+0.00%, +0.00%]",INCONCLUSIVE (KEEP: Cleanly captures multi-week retrofit progression)

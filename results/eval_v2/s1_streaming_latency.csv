@@ -1,0 +1,2 @@
+Component,Mean_Latency_ms,P95_Latency_ms,P99_Latency_ms,Budget_ms,Status
+S1 Streaming Spectral Step,4.752,6.385,6.726,20.0,PASS

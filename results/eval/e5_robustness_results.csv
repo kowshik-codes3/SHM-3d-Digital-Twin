@@ -1,0 +1,8 @@
+Perturbation_Type,Severity_Parameter,Mean_Score,Exceedance_Rate,Fault_Discriminator_Accuracy,Notes
+None (Clean Validation Baseline),N/A,0.2605654339062651,0.0,1.0,Baseline control
+Additive Gaussian White Noise,SNR = 30 dB,0.26037605786277196,0.0,1.0,Graceful degradation under low SNR
+Additive Gaussian White Noise,SNR = 20 dB,0.26235492445490766,0.0,1.0,Graceful degradation under low SNR
+Additive Gaussian White Noise,SNR = 10 dB,0.27469389162936403,0.0,1.0,Graceful degradation under low SNR
+Additive Gaussian White Noise,SNR = 5 dB,0.2960876015246247,0.0,1.0,Graceful degradation under low SNR
+Sensor Flatline (Zero-Signal Drop),Channel aBD17Ay = 0.0,0.0,0.0,1.0,Successfully caught by SENSOR_FAULT filter; blocked from false structural alert
+Impulse Spikes (Electrical Glitch),5 random spikes @ 50.0 m/s²,0.0,0.0,1.0,Detected as non-physical impulse; correctly routed to SENSOR_FAULT

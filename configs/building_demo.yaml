@@ -1,0 +1,43 @@
+structure_id: building_demo
+name: 10-Story Commercial Tower
+structure_type: building
+fs: 30.0
+temperature_sensor_id: temp_ambient
+
+sensors:
+  - id: accel_roof_x
+    name: Roof_Accel_X
+    type: accel
+    unit: g
+    position_xyz: [0.0, 40.0, 0.0]
+    channel_index: 0
+    description: Roof-level lateral acceleration X
+  - id: accel_roof_y
+    name: Roof_Accel_Y
+    type: accel
+    unit: g
+    position_xyz: [0.0, 40.0, 15.0]
+    channel_index: 1
+    description: Roof-level lateral acceleration Y
+  - id: temp_ambient
+    name: Roof_Ambient_Temp
+    type: temp
+    unit: degC
+    position_xyz: [0.0, 42.0, 0.0]
+    channel_index: 2
+    description: Rooftop ambient temperature
+
+detectors:
+  - detector_id: waveform_ae_tower
+    type: waveform_ae
+    update_cadence_seconds: 1.0
+    params:
+      input_size: 3
+      target_size: 2
+      seq_len: 30
+      hidden: 16
+
+persistence:
+  persistence_k: 2
+  t_persist: 0.04
+  warning_debounce_seconds: 30.0

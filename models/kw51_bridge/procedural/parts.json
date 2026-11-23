@@ -1,0 +1,212 @@
+[
+  {
+    "mesh_name": "Part_1",
+    "part_id": "part_1",
+    "ifc_class": null,
+    "triangle_count": 12,
+    "vertex_count": 8,
+    "bounding_box_meters": {
+      "min": [
+        -25.0,
+        8.0,
+        -5.0
+      ],
+      "max": [
+        25.0,
+        9.0,
+        5.0
+      ],
+      "dimensions": [
+        50.0,
+        1.0,
+        10.0
+      ]
+    },
+    "center": [
+      0.0,
+      8.5,
+      0.0
+    ],
+    "assigned_sensor_id": null
+  },
+  {
+    "mesh_name": "Part_2",
+    "part_id": "part_2",
+    "ifc_class": null,
+    "triangle_count": 12,
+    "vertex_count": 8,
+    "bounding_box_meters": {
+      "min": [
+        -25.0,
+        0.0,
+        -5.5
+      ],
+      "max": [
+        -22.0,
+        8.0,
+        5.5
+      ],
+      "dimensions": [
+        3.0,
+        8.0,
+        11.0
+      ]
+    },
+    "center": [
+      -23.5,
+      4.0,
+      0.0
+    ],
+    "assigned_sensor_id": null
+  },
+  {
+    "mesh_name": "Part_3",
+    "part_id": "part_3",
+    "ifc_class": null,
+    "triangle_count": 12,
+    "vertex_count": 8,
+    "bounding_box_meters": {
+      "min": [
+        22.0,
+        0.0,
+        -5.5
+      ],
+      "max": [
+        25.0,
+        8.0,
+        5.5
+      ],
+      "dimensions": [
+        3.0,
+        8.0,
+        11.0
+      ]
+    },
+    "center": [
+      23.5,
+      4.0,
+      0.0
+    ],
+    "assigned_sensor_id": null
+  },
+  {
+    "mesh_name": "Part_4",
+    "part_id": "part_4",
+    "ifc_class": null,
+    "triangle_count": 96,
+    "vertex_count": 50,
+    "bounding_box_meters": {
+      "min": [
+        -9.5333,
+        2.8,
+        -4.0
+      ],
+      "max": [
+        -7.1333,
+        5.2,
+        4.0
+      ],
+      "dimensions": [
+        2.4,
+        2.4,
+        8.0
+      ]
+    },
+    "center": [
+      -8.3333,
+      4.0,
+      0.0
+    ],
+    "assigned_sensor_id": null
+  },
+  {
+    "mesh_name": "Part_5",
+    "part_id": "part_5",
+    "ifc_class": null,
+    "triangle_count": 96,
+    "vertex_count": 50,
+    "bounding_box_meters": {
+      "min": [
+        7.1333,
+        2.8,
+        -4.0
+      ],
+      "max": [
+        9.5333,
+        5.2,
+        4.0
+      ],
+      "dimensions": [
+        2.4,
+        2.4,
+        8.0
+      ]
+    },
+    "center": [
+      8.3333,
+      4.0,
+      0.0
+    ],
+    "assigned_sensor_id": null
+  },
+  {
+    "mesh_name": "Part_6",
+    "part_id": "part_6",
+    "ifc_class": null,
+    "triangle_count": 12,
+    "vertex_count": 8,
+    "bounding_box_meters": {
+      "min": [
+        -25.0,
+        9.0,
+        -5.0
+      ],
+      "max": [
+        25.0,
+        9.9,
+        -4.7
+      ],
+      "dimensions": [
+        50.0,
+        0.9,
+        0.3
+      ]
+    },
+    "center": [
+      0.0,
+      9.45,
+      -4.85
+    ],
+    "assigned_sensor_id": null
+  },
+  {
+    "mesh_name": "Part_7",
+    "part_id": "part_7",
+    "ifc_class": null,
+    "triangle_count": 12,
+    "vertex_count": 8,
+    "bounding_box_meters": {
+      "min": [
+        -25.0,
+        9.0,
+        4.7
+      ],
+      "max": [
+        25.0,
+        9.9,
+        5.0
+      ],
+      "dimensions": [
+        50.0,
+        0.9,
+        0.3
+      ]
+    },
+    "center": [
+      0.0,
+      9.45,
+      4.85
+    ],
+    "assigned_sensor_id": null
+  }
+]

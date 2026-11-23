@@ -1,0 +1,6 @@
+Perturbation_Type,Severity_Parameter,Mean_Score,Exceedance_Rate,Status_Label,Scientific_Disposition
+None (Clean Validation Baseline),N/A,0.2606,0.00% (0/20),Baseline Control,Reference unperturbed score distribution
+Additive Gaussian White Noise,SNR = 30 dB,0.2604,0.00% (0/20),Model Insensitivity,Negligible score shift (delta = -0.0002); noise is completely suppressed by autoencoder reconstruction
+Additive Gaussian White Noise,SNR = 20 dB,0.2624,0.00% (0/20),Model Insensitivity,Negligible score shift (delta = +0.0018); reconstruction error barely responds to 20 dB noise
+Additive Gaussian White Noise,SNR = 10 dB,0.2747,0.00% (0/20),Model Insensitivity,Mild score elevation (delta = +0.0141); well below EVT threshold tau=5.87
+Additive Gaussian White Noise,SNR = 5 dB,0.2961,0.00% (0/20),Model Insensitivity,Score increases only from 0.2606 to 0.2961 (+13.6%) despite 5 dB extreme noise. This demonstrates model insensitivity to broadband energy rather than active robustness.

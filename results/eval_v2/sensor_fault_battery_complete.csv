@@ -1,0 +1,22 @@
+Fault_Type,Magnitude_Level,Parameter_Value,Total_Tests,SENSOR_FAULT_Detection_Rate,CRITICAL_Misclassification_Rate,Disposition
+Flatline,sub_threshold,0.05,100,33.0% (33/100),0.0% (0/100),Expected Sub-threshold
+Flatline,nominal,0.0,100,100.0% (100/100),0.0% (0/100),PASS: Discarded as sensor fault
+Flatline,extreme,0.0,100,100.0% (100/100),0.0% (0/100),PASS: Discarded as sensor fault
+Impulse_Spikes,sub_threshold,2.0,100,77.0% (77/100),0.0% (0/100),Expected Sub-threshold
+Impulse_Spikes,nominal,10.0,100,100.0% (100/100),0.0% (0/100),PASS: Discarded as sensor fault
+Impulse_Spikes,extreme,50.0,100,100.0% (100/100),0.0% (0/100),PASS: Discarded as sensor fault
+Calibration_Drift,sub_threshold,0.05,100,57.0% (57/100),0.0% (0/100),Expected Sub-threshold
+Calibration_Drift,nominal,0.2,100,56.0% (56/100),0.0% (0/100),FAIL
+Calibration_Drift,extreme,1.0,100,50.0% (50/100),0.0% (0/100),FAIL
+Packet_Dropout,sub_threshold,0.02,100,59.0% (59/100),0.0% (0/100),Expected Sub-threshold
+Packet_Dropout,nominal,0.1,100,100.0% (100/100),0.0% (0/100),PASS: Discarded as sensor fault
+Packet_Dropout,extreme,0.5,100,100.0% (100/100),0.0% (0/100),PASS: Discarded as sensor fault
+Gain_Error,sub_threshold,1.2,100,59.0% (59/100),0.0% (0/100),Expected Sub-threshold
+Gain_Error,nominal,3.0,100,59.0% (59/100),2.0% (2/100),FAIL
+Gain_Error,extreme,10.0,100,100.0% (100/100),0.0% (0/100),PASS: Discarded as sensor fault
+Noise_Increase,sub_threshold,0.05,100,58.0% (58/100),0.0% (0/100),Expected Sub-threshold
+Noise_Increase,nominal,0.2,100,52.0% (52/100),0.0% (0/100),FAIL
+Noise_Increase,extreme,1.0,100,51.0% (51/100),0.0% (0/100),FAIL
+Stuck_At_Nonzero,sub_threshold,0.1,100,100.0% (100/100),0.0% (0/100),PASS: Discarded as sensor fault
+Stuck_At_Nonzero,nominal,1.0,100,100.0% (100/100),0.0% (0/100),PASS: Discarded as sensor fault
+Stuck_At_Nonzero,extreme,5.0,100,100.0% (100/100),0.0% (0/100),PASS: Discarded as sensor fault

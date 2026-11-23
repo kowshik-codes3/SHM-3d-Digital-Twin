@@ -1,0 +1,6 @@
+Month_Archive,Calendar_Range,Documented_Retrofit_Event,Operational_Recordings,Recorded_Hours,Mean_Deck_Temp_C,Stage2_Exceedance_Rate,B0_Exceedance_Rate,B1_RMS_Exceedance_Rate
+ambient_201905,"May 15 - May 31, 2019","Retrofit works initiated (deck & arch preparation; Maes et al. 2020, Sec. 2)",102,8.5,14.18,0.00% (0/102),29.41% (30/102),3.92% (4/102)
+ambient_201906,"Jun 01 - Jun 02, 2019",Intermediate recording period before rail traffic suspension (Maes et al. 2020),10,0.83,20.75,0.00% (0/10),100.00% (10/10),0.00% (0/10)
+ambient_201907,"Jul 01 - Jul 31, 2019",Steel retrofit construction ongoing; ambient vibration under works (Maes et al. 2020),185,15.42,19.93,0.00% (0/185),98.92% (183/185),4.32% (8/185)
+ambient_201908,"Aug 01 - Aug 31, 2019",Installation of additional diagonal bracing members (Maes et al. 2020),186,15.5,19.58,0.00% (0/186),97.85% (182/186),4.84% (9/186)
+ambient_201909,"Sep 01 - Sep 26, 2019",Final construction phase prior to bridge reopening on Sep 27 (Maes et al. 2020),156,13.0,15.82,0.64% (1/156),72.44% (113/156),3.85% (6/156)

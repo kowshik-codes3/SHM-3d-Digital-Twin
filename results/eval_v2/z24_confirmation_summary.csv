@@ -1,0 +1,2 @@
+Benchmark,Healthy_Val_FAR,Damage_Recall,ROC_AUC,Detection_Status
+Z24 Bridge Progressive Damage Benchmark,11.11%,69.27%,0.9172,PASS (Clean External Confirmation)

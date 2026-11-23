@@ -1,0 +1,2 @@
+Test_Mode,Elapsed_Time_Sec,Start_RSS_MB,End_RSS_MB,Peak_Traced_MB,Fitted_Slope_MB_per_sec,Fitted_Slope_MB_per_hour,Leak_Test_Status
+Accelerated (100 Recordings / 8.33 Hours),3.93,362.16,362.19,0.35,+0.004786 ± 0.001852,+17.2305 ± 6.6680,PASS (Slope not distinguishable from zero)

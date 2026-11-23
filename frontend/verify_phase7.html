@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 7: Real-Time WebGL 3D Digital Twin & Live Telemetry Stream</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #1a202c;
+            color: #e2e8f0;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+        }
+        #canvas-container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #ui-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            width: 420px;
+            background: rgba(26, 32, 44, 0.88);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #63b3ed;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        p.subtitle {
+            font-size: 0.78rem;
+            color: #a0aec0;
+            margin-bottom: 14px;
+        }
+        .connection-status {
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .dot-online { background: #48bb78; box-shadow: 0 0 8px #48bb78; }
+        .dot-offline { background: #f56565; box-shadow: 0 0 8px #f56565; }
+
+        .section-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            text-transform: uppercase;
+            margin-top: 14px;
+            margin-bottom: 8px;
+            letter-spacing: 0.04em;
+        }
+        .button-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        button {
+            background: #2d3748;
+            color: #e2e8f0;
+            border: 1px solid #4a5568;
+            border-radius: 6px;
+            padding: 8px 10px;
+            font-size: 0.76rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        button:hover {
+            background: #4a5568;
+            border-color: #63b3ed;
+            color: #ffffff;
+        }
+        button.btn-critical {
+            border-color: #e53e3e;
+            color: #feb2b2;
+        }
+        button.btn-critical:hover {
+            background: #9b2c2c;
+            color: #ffffff;
+        }
+        button.btn-success {
+            border-color: #38a169;
+            color: #9ae6b4;
+        }
+        button.btn-success:hover {
+            background: #276749;
+            color: #ffffff;
+        }
+
+        #status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .badge-normal { background: rgba(56, 161, 105, 0.2); color: #48bb78; border: 1px solid #38a169; }
+        .badge-critical { background: rgba(229, 62, 62, 0.2); color: #f56565; border: 1px solid #e53e3e; }
+        .badge-warning { background: rgba(221, 107, 32, 0.2); color: #ed8936; border: 1px solid #dd6b20; }
+
+        .telemetry-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.72rem;
+            margin-top: 8px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        }
+        .telemetry-table th {
+            text-align: left;
+            color: #a0aec0;
+            border-bottom: 1px solid #4a5568;
+            padding: 4px;
+        }
+        .telemetry-table td {
+            padding: 4px;
+            border-bottom: 1px solid #2d3748;
+        }
+        .val-normal { color: #48bb78; }
+        .val-critical { color: #f56565; font-weight: 700; }
+        .val-warning { color: #ed8936; }
+    </style>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="canvas-container"></div>
+
+    <div id="ui-overlay">
+        <h1>SHM Live Digital Twin</h1>
+        <p class="subtitle">Phase 7: Sub-Second WebSocket Telemetry & PyTorch Inference</p>
+
+        <div class="connection-status">
+            <span id="conn-dot" class="status-dot dot-offline"></span>
+            <span id="conn-text">Disconnected (ws://localhost:8000/ws/telemetry)</span>
+        </div>
+
+        <div class="section-title">Backend Fault Injection APIs</div>
+        <div class="button-grid">
+            <button class="btn-critical" id="btn-inject-midspan">Inject MidSpan Fault</button>
+            <button class="btn-critical" id="btn-inject-pier">Inject Pier Fault</button>
+            <button class="btn-success" id="btn-reset-faults">Reset All Faults</button>
+            <button id="btn-reconnect-ws">Reconnect WS</button>
+        </div>
+
+        <div class="section-title">System Health State</div>
+        <div style="margin-bottom: 10px;">
+            State: <span id="status-badge" class="badge-normal">NORMAL</span>
+            <span id="localized-text" style="font-size: 0.72rem; color: #a0aec0; margin-left: 8px;"></span>
+        </div>
+
+        <div class="section-title">Live Sensor Residuals (MSE / τ)</div>
+        <table class="telemetry-table">
+            <thead>
+                <tr>
+                    <th>Channel</th>
+                    <th>MSE</th>
+                    <th>UCL (τ)</th>
+                    <th>Ratio</th>
+                    <th>State</th>
+                </tr>
+            </thead>
+            <tbody id="telemetry-rows">
+                <tr><td colspan="5" style="color: #718096; text-align: center;">Waiting for live stream...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        import { SceneManager } from './js/SceneManager.js';
+        import { TelemetryWebSocketClient } from './js/WebSocketClient.js';
+
+        const connDot = document.getElementById('conn-dot');
+        const connText = document.getElementById('conn-text');
+        const statusBadge = document.getElementById('status-badge');
+        const localizedText = document.getElementById('localized-text');
+        const telemetryRows = document.getElementById('telemetry-rows');
+
+        let sceneMgr = null;
+        let wsClient = null;
+
+        // Initialize 3D WebGL Scene
+        try {
+            const container = document.getElementById('canvas-container');
+            sceneMgr = new SceneManager(container, THREE, OrbitControls);
+            console.log("3D SceneManager initialized.");
+        } catch (err) {
+            console.error("Failed to initialize SceneManager:", err);
+        }
+
+        // Initialize WebSocket Client
+        function initWebSocket() {
+            wsClient = new TelemetryWebSocketClient("ws://localhost:8000/ws/telemetry", (nodeId, status, mse, payload) => {
+                // Update 3D Object health in WebGL scene
+                if (sceneMgr) {
+                    sceneMgr.updateNodeHealth(nodeId, status, mse);
+                }
+
+                // Update UI Overlay Status Badge
+                const sysStatus = payload.system_status || "NORMAL";
+                statusBadge.textContent = sysStatus;
+                if (sysStatus === "CRITICAL") {
+                    statusBadge.className = "badge-critical";
+                    localizedText.textContent = `[Defect Node: ${payload.localized_defect_node || 'Unknown'}]`;
+                } else if (sysStatus === "WARNING") {
+                    statusBadge.className = "badge-warning";
+                    localizedText.textContent = "";
+                } else {
+                    statusBadge.className = "badge-normal";
+                    localizedText.textContent = "";
+                }
+
+                // Update Telemetry Table Rows
+                updateTelemetryTable(payload.nodes);
+            });
+
+            wsClient.connect();
+
+            // Monitor connection status
+            setInterval(() => {
+                if (wsClient.ws && wsClient.ws.readyState === WebSocket.OPEN) {
+                    connDot.className = "status-dot dot-online";
+                    connText.textContent = "Live Stream Connected (ws://localhost:8000)";
+                } else {
+                    connDot.className = "status-dot dot-offline";
+                    connText.textContent = "Connecting/Disconnected...";
+                }
+            }, 1000);
+        }
+
+        function updateTelemetryTable(nodes) {
+            if (!nodes) return;
+            let html = "";
+            Object.entries(nodes).forEach(([name, data]) => {
+                const shortName = name.replace("Sensor_", "");
+                let stateClass = "val-normal";
+                if (data.status === "CRITICAL") stateClass = "val-critical";
+                else if (data.status === "WARNING") stateClass = "val-warning";
+
+                html += `
+                    <tr>
+                        <td>${shortName}</td>
+                        <td class="${stateClass}">${data.mse.toFixed(4)}</td>
+                        <td>${data.threshold.toFixed(4)}</td>
+                        <td>${data.ratio.toFixed(2)}×</td>
+                        <td class="${stateClass}">${data.status}</td>
+                    </tr>
+                `;
+            });
+            telemetryRows.innerHTML = html;
+        }
+
+        // Initialize connection
+        initWebSocket();
+
+        // API Fault Injection Actions
+        document.getElementById('btn-inject-midspan').addEventListener('click', async () => {
+            try {
+                await fetch('http://localhost:8000/api/v1/simulate-fault', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ node_id: 'Sensor_MidSpan_Girder', fault_type: 'stiffness_loss', severity: 0.6 })
+                });
+            } catch (err) {
+                console.error("API error:", err);
+            }
+        });
+
+        document.getElementById('btn-inject-pier').addEventListener('click', async () => {
+            try {
+                await fetch('http://localhost:8000/api/v1/simulate-fault', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ node_id: 'Sensor_Pier_Left', fault_type: 'stiffness_loss', severity: 0.5 })
+                });
+            } catch (err) {
+                console.error("API error:", err);
+            }
+        });
+
+        document.getElementById('btn-reset-faults').addEventListener('click', async () => {
+            try {
+                await fetch('http://localhost:8000/api/v1/reset-faults', { method: 'POST' });
+            } catch (err) {
+                console.error("API error:", err);
+            }
+        });
+
+        document.getElementById('btn-reconnect-ws').addEventListener('click', () => {
+            if (wsClient) {
+                wsClient.disconnect();
+                wsClient.connect();
+            }
+        });
+    </script>
+</body>
+</html>

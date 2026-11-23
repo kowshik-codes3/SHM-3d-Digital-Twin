@@ -1,0 +1,12 @@
+{
+  "name": "structureiq-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Multi-Structure SHM Digital Twin Platform",
+  "scripts": {
+    "dev": "npm --prefix frontend/shm-dashboard run dev",
+    "build": "npm --prefix frontend/shm-dashboard run build",
+    "lint": "npm --prefix frontend/shm-dashboard run lint",
+    "preview": "npm --prefix frontend/shm-dashboard run preview"
+  }
+}

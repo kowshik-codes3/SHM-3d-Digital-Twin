@@ -1,0 +1,173 @@
+structure_id: kw51
+name: KW51 Railway Arch Bridge
+structure_type: bridge
+fs: 50.0
+native_fs: 825.8064516129032
+detector_fs: 50.0
+acquisition_mode: scheduled_recordings
+resampling:
+  enabled: true
+  filter_type: butter
+  order: 8
+  cutoff_hz: 20.0
+  ripple_db: 0.5
+  mode: block_zero_phase
+  max_gap_interpolate_sec: 0.25
+quality:
+  flatline_min_std: 1.0e-06
+  stuck_min_unique_ratio: 0.05
+  saturation_max_fraction: 0.02
+  default_accel_range:
+  - -20.0
+  - 20.0
+  spike_robust_z_threshold: 12.0
+  spike_kurtosis_threshold: 25.0
+  drift_sigma_multiplier: 6.0
+  gain_high_ratio: 2.5
+  gain_low_ratio: 0.35
+  noise_floor_ratio: 4.0
+  dropout_zero_fraction: 0.05
+  max_gap_interpolate_sec: 0.25
+  reorder_window_frames: 16
+  late_arrival_tolerance_sec: 5.0
+  clock_offset_max_sec: 2.0
+  clock_jump_max_sec: 1.0
+  clock_drift_max_ppm: 500.0
+  clock_sync_skew_max_sec: 0.1
+  offline_timeout_sec: 10.0
+  temp_range_c:
+  - -40.0
+  - 70.0
+  temp_max_roc_c_per_min: 5.0
+  weight_completeness: 0.4
+  weight_timing: 0.2
+  weight_signal_health: 0.4
+ingestion:
+  type: replay
+  params:
+    cache_dir: data/kw51/cache_50hz
+    speed_multiplier: max
+  reset_on_recording_boundary: true
+  max_queue_size: 512
+sensors:
+- id: aBD11Az
+  name: Pier11_Vertical_Az
+  type: accel
+  unit: m/s^2
+  axis: az
+  range_min: -5.0
+  range_max: 5.0
+  position_xyz:
+  - -28.0
+  - 3.2
+  - 0.0
+  mesh_name: Deck
+  channel_index: 0
+  description: Section 11 vertical acceleration (left quarter-span)
+- id: aBD17Ay
+  name: Pier17_Lateral_Ay
+  type: accel
+  unit: m/s^2
+  axis: ay
+  range_min: -5.0
+  range_max: 5.0
+  position_xyz:
+  - 12.5
+  - 3.2
+  - -1.0
+  mesh_name: Deck
+  channel_index: 1
+  description: Section 17 transverse horizontal acceleration
+- id: aBD17Az
+  name: Pier17_Vertical_Az
+  type: accel
+  unit: m/s^2
+  axis: az
+  range_min: -5.0
+  range_max: 5.0
+  position_xyz:
+  - 0.0
+  - 3.2
+  - 0.0
+  mesh_name: Deck
+  channel_index: 2
+  description: Section 17 vertical acceleration
+- id: aBD23Az
+  name: Pier23_Vertical_Az
+  type: accel
+  unit: m/s^2
+  axis: az
+  range_min: -5.0
+  range_max: 5.0
+  position_xyz:
+  - 28.0
+  - 3.2
+  - 0.0
+  mesh_name: Deck
+  channel_index: 3
+  description: Section 23 vertical acceleration (right quarter-span)
+- id: tVL
+  name: Ambient_Temp_tVL
+  type: temp
+  unit: degC
+  axis: temp
+  range_min: -30.0
+  range_max: 60.0
+  position_xyz:
+  - 0.0
+  - 6.5
+  - 0.0
+  mesh_name: null
+  channel_index: 4
+  description: Ambient deck thermocouple temperature
+temperature_sensor_id: tVL
+detectors:
+- detector_id: waveform_ae
+  type: waveform_ae
+  params:
+    input_size: 5
+    target_size: 4
+    seq_len: 50
+    hidden: 32
+  update_cadence_seconds: 1.0
+  min_channels: 2
+  required_channels: null
+- detector_id: spectral_tracking
+  type: spectral_tracking
+  params:
+    nperseg: 2048
+    window_sec: 300.0
+    temp_model_type: piecewise_freezing
+    target_far: 0.01
+    persistence_k: 2
+    operating_threshold_tau: 28.91
+    slow_drift_ewma_span: 20
+  update_cadence_seconds: 300.0
+  min_channels: 2
+  required_channels: null
+modes:
+- name: Mode 1 (Vertical)
+  band_hz:
+  - 0.48
+  - 0.55
+  channel_type: az
+- name: Mode 2 (Lateral)
+  band_hz:
+  - 1.18
+  - 1.28
+  channel_type: ay
+- name: Mode 3 (Vertical)
+  band_hz:
+  - 1.8
+  - 2.0
+  channel_type: az
+- name: Mode 4 (Vertical)
+  band_hz:
+  - 2.35
+  - 2.52
+  channel_type: az
+persistence:
+  persistence_k: 2
+  t_persist: 0.04
+  warning_debounce_seconds: 30.0
+description: KW51 4 accelerometers + temperature, 50 Hz, dual detectors

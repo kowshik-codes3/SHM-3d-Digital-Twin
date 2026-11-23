@@ -1,0 +1,117 @@
+{
+  "primary_with_temperature": {
+    "experiment_name": "kw51_5ch_evt",
+    "channels": [
+      "aBD11Az",
+      "aBD17Ay",
+      "aBD17Az",
+      "aBD23Az",
+      "tVL"
+    ],
+    "has_temperature": true,
+    "threshold_method": "evt",
+    "healthy_test_hours": 2.0001,
+    "healthy_test_windows": 14399,
+    "false_alarms_total": 43,
+    "false_alarms_per_hour": 21.4987,
+    "empirical_far_per_window": 0.002986,
+    "damaged_test_hours": 0.8334,
+    "damaged_test_windows": 5999,
+    "detection_delay_seconds": 1200.5,
+    "detection_delay_windows": 2401,
+    "is_detected": true,
+    "precision": 0.9766,
+    "recall": 0.2992,
+    "f1_score": 0.4581,
+    "roc_auc": 0.4876,
+    "localization_counts": {
+      "aBD11Az": 0,
+      "aBD17Ay": 0,
+      "aBD17Az": 0,
+      "aBD23Az": 0,
+      "tVL": 1795
+    },
+    "primary_localized_node": "tVL",
+    "threshold_far_comparison": {
+      "evt_empirical_far": 0.0031252170289603446,
+      "percentile_999_empirical_far": 0.0013195360788943677,
+      "spc_3sigma_empirical_far": 0.00555594138481839
+    }
+  },
+  "ablation_no_temperature": {
+    "experiment_name": "kw51_4ch_no_temp_evt",
+    "channels": [
+      "aBD11Az",
+      "aBD17Ay",
+      "aBD17Az",
+      "aBD23Az"
+    ],
+    "has_temperature": false,
+    "threshold_method": "evt",
+    "healthy_test_hours": 2.0001,
+    "healthy_test_windows": 14399,
+    "false_alarms_total": 39,
+    "false_alarms_per_hour": 19.4989,
+    "empirical_far_per_window": 0.002709,
+    "damaged_test_hours": 0.8334,
+    "damaged_test_windows": 5999,
+    "detection_delay_seconds": null,
+    "detection_delay_windows": null,
+    "is_detected": false,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0.0,
+    "roc_auc": 0.7486,
+    "localization_counts": {
+      "aBD11Az": 0,
+      "aBD17Ay": 0,
+      "aBD17Az": 0,
+      "aBD23Az": 0
+    },
+    "primary_localized_node": null,
+    "threshold_far_comparison": {
+      "evt_empirical_far": 0.0008333912077227585,
+      "percentile_999_empirical_far": 0.0006250434057920689,
+      "spc_3sigma_empirical_far": 0.004097506771303563
+    }
+  },
+  "baseline_percentile_999": {
+    "experiment_name": "kw51_5ch_percentile_999",
+    "channels": [
+      "aBD11Az",
+      "aBD17Ay",
+      "aBD17Az",
+      "aBD23Az",
+      "tVL"
+    ],
+    "has_temperature": true,
+    "threshold_method": "percentile_999",
+    "healthy_test_hours": 2.0001,
+    "healthy_test_windows": 14399,
+    "false_alarms_total": 43,
+    "false_alarms_per_hour": 21.4987,
+    "empirical_far_per_window": 0.002986,
+    "damaged_test_hours": 0.8334,
+    "damaged_test_windows": 5999,
+    "detection_delay_seconds": 1225.0,
+    "detection_delay_windows": 2450,
+    "is_detected": true,
+    "precision": 0.964,
+    "recall": 0.1919,
+    "f1_score": 0.32,
+    "roc_auc": 0.5358,
+    "localization_counts": {
+      "aBD11Az": 0,
+      "aBD17Ay": 0,
+      "aBD17Az": 0,
+      "aBD23Az": 0,
+      "tVL": 1151
+    },
+    "primary_localized_node": "tVL",
+    "threshold_far_comparison": {
+      "evt_empirical_far": 0.0031252170289603446,
+      "percentile_999_empirical_far": 0.0013195360788943677,
+      "spc_3sigma_empirical_far": 0.00555594138481839
+    }
+  }
+}

@@ -1,0 +1,2 @@
+Total_Elapsed_Sec,Total_Frames_Processed,Start_RSS_MB,Final_RSS_MB,Fitted_Slope_MB_per_hr,Verdict
+3540.75,149731,302.63,83.05,-83.8316 ± 20.2642,MONITOR

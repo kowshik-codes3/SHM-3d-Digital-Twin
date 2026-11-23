@@ -1,0 +1,32 @@
+[
+  {
+    "mesh_name": "Part_1",
+    "part_id": "part_1",
+    "ifc_class": null,
+    "triangle_count": 12,
+    "vertex_count": 24,
+    "bounding_box_meters": {
+      "min": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max": [
+        10.0,
+        2.0,
+        30.0
+      ],
+      "dimensions": [
+        10.0,
+        2.0,
+        30.0
+      ]
+    },
+    "center": [
+      5.0,
+      1.0,
+      15.0
+    ],
+    "assigned_sensor_id": null
+  }
+]

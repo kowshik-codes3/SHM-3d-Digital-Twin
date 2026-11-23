@@ -1,0 +1,4 @@
+Split,Description,Recordings_Count,Recorded_Hours,Stage2_FAR,B0_Temp_FAR,B1_RMS_FAR
+healthy-test-cold,Jan 2019 (Winter),185,15.42,0.0,0.0,0.0
+healthy-test-warming,Feb-Apr 2019 (Spring Drift),504,42.0,0.023809523809523808,0.19246031746031747,0.04563492063492063
+healthy-test-warm,"May 1-14, 2019 (Late Spring Pre-Retrofit)",84,7.0,0.011904761904761904,0.2857142857142857,0.047619047619047616
